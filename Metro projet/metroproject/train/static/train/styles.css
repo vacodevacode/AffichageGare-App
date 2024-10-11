@@ -1,0 +1,73 @@
+body {
+  background-color: #0064aa;
+  color: white; /* Couleur du texte */
+}
+
+header {
+  background-color: rgb(28, 27, 27); /* Couleur de fond du header */
+  color: yellow; /* Couleur du texte du header */
+  padding: 30px; /* Espacement autour du texte */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+a {
+  border: solid;
+  color: white;
+  padding: 5px;
+}
+
+.rand {
+  text-decoration: none;
+  color: black;
+  border: solid;
+  border-color: white;
+  background-color: white;
+  padding: 5px;
+  text-align: center;
+  display: inline-block;
+  margin: auto;
+}
+
+th {
+  text-align: left;
+}
+
+td {
+  padding: 15px;
+  white-space: nowrap;
+}
+
+th,
+td {
+  padding: 30px;
+  text-align: left;
+}
+
+td a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+td a:hover {
+  color: #6420aa;
+}
+
+/* Style pour les lignes impaires */
+tbody tr:nth-child(odd) {
+  background-color: #003b6f; /* Bleu foncé */
+}
+
+/* Style pour les lignes paires */
+tbody tr:nth-child(even) {
+  background-color: #0064aa; /* Bleu clair */
+}
+
+/* Style pour l'heure */
+tbody td:nth-child(2) {
+  color: yellow; /* Jaune */
+}

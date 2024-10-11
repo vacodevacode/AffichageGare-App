@@ -1,0 +1,49 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'train/styles.css' %}" />
+    <title>Tableau d'Informations de Gare</title>
+  </head>
+  <body>
+    <header>
+      <h1>Dan train</h1>
+      <form action="{% url 'index' %}" method="GET">
+        <!-- Je pointe mon template vers l'index car c'est là bas que je récupère mon Input avec la méthode GET -->
+        <input
+          type="text"
+          name="recherche"
+          placeholder="Entrez le numéro du train"
+        />
+        <button type="submit">Rechercher</button>
+      </form>
+    </header>
+    <table>
+      <thead>
+        <tr>
+          <th>Train ID</th>
+          <th>Horaires</th>
+          <th>Voyage</th>
+          <!--<th>Image</th-->
+        </tr>
+      </thead>
+      <tbody>
+        {% for wagon in all_wagon %}
+        <tr>
+          <td>{{ wagon.id }}</td>
+          <td>{{ wagon.horaire_plan }}</td>
+          <td>{{ wagon.voyage }}</td>
+          <!--<td><img src="{{ wagon.img }}" alt="" /></td-->
+          <td>{{ train.id }}</td>
+          <td>{{ train.destination }}</td>
+          <td>{{ train.datetime }}</td>
+          <td><a href="/train/detail/{{ wagon.id }}">Détails</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a class="rand" href="/train/detail/{{ random }}">Random</a>
+  </body>
+</html>
